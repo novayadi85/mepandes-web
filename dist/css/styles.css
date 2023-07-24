@@ -1546,11 +1546,11 @@ main {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0px;
-    background: #392007;
-    color: #ecd8c4;
+    background: #000;
+    color: #fff;
 }
 .site-footer a {
-    color: #ecd8c4;
+    color: #fff;
     text-decoration: none;
 }
 .site-footer a:hover,
