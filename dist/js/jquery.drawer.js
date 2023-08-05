@@ -269,4 +269,37 @@ jQuery(document).ready(function() {
   });
 
 
+
+});
+
+const images_menus = {};
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyloadImages = document.querySelectorAll("img.lazyloaded");
+  var lazyloadThrottleTimeout;
+
+  function lazyload() {
+      if (lazyloadThrottleTimeout) {
+          clearTimeout(lazyloadThrottleTimeout);
+      }
+
+      lazyloadThrottleTimeout = setTimeout(function() {
+          lazyloadImages.forEach(function(img) {
+              if (images_menus[img?.dataset?.imageId]) {
+                  if (!images_menus[img.dataset.imageId].includes('no-image')) {
+                      img.src = images_menus[img?.dataset?.imageId];
+                  } else {
+                      img.style.display = 'none'
+                  }
+              }
+              else if(img?.dataset?.src) {
+                  img.src = img.dataset.src;
+              }
+
+              img.classList.remove('lazy');
+          });
+      }, 20);
+  }
+
+  lazyload();
+
 });
