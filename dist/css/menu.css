@@ -354,6 +354,7 @@ button#openDrawerButton {
   font-size: 18px;
   color: #000;
   font-weight: 700;
+  width: 100%;
 }
 
 .menu-flex {

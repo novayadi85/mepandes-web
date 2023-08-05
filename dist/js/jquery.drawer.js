@@ -64,17 +64,22 @@ jQuery(document).ready(function() {
       let menuId = jQuery(this).data("menu-id");
       headerTitle = jQuery(this).text();
       if (!menuId) {
-          console.log('data-menu', menuId)
-          console.log('data-menu', jQuery(this))
+          //console.log('data-menu', menuId)
+          //console.log('data-menu', jQuery(this))
           menuId = jQuery(this).attr("data-menu");
           headerTitle = jQuery(this).find('> a').text();
       }
 
-      if (menuId) e.preventDefault();
+      if (jQuery(".menu_source").find(`[data-menu="${menuId}"] > .menu-holder`).length > 0) {
+          e.preventDefault();
+      }
 
-      activeMenuId = menuId;
-      showContent(menuId, false);
-      setTitle();
+      if (menuId) {
+          activeMenuId = menuId;
+          showContent(menuId, false);
+          setTitle();
+      }
+
   });
 
   function openDrawer() {
@@ -174,9 +179,9 @@ jQuery(document).ready(function() {
           old = true;
       }
 
-      console.log(menuId)
-      console.log(visitedMenus)
-      console.log(selectedMenu.length)
+      //console.log(menuId)
+      //console.log(visitedMenus)
+      //console.log(selectedMenu.length)
 
       let newContent = '';
 
