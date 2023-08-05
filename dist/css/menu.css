@@ -413,6 +413,79 @@ h1.drawer-heading {
   border-bottom: 1px solid #9999;
 }
 
+
+
+.drawer--contents, .accordion--target {
+  overflow: overlay;
+  scrollbar-color: #000000 transparent;
+  scrollbar-width: thin;
+}
+.drawer--contents::-webkit-scrollbar, .accordion--target::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+.drawer--contents::-webkit-scrollbar-track,
+.accordion--target::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 20px;
+  width: 10px;
+  margin-top: 10px;
+}
+.drawer--contents::-webkit-scrollbar-thumb,
+.accordion--target::-webkit-scrollbar-thumb
+ {
+  background-color: #000000;
+  border-radius: 5px;
+  padding: 5px;
+  min-height: 40px;
+  min-width: 10px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+.drawer--contents::-moz-scrollbar,
+.accordion--target::-moz-scrollbar
+ {
+  width: 5px;
+  height: 5px;
+}
+
+.drawer--contents::-moz-scrollbar-track,
+.accordion--target::-moz-scrollbar-track
+{
+  background-color: transparent;
+}
+
+.drawer--contents::-moz-scrollbar-thumb,
+.accordion--target::-moz-scrollbar-thumb
+{
+  background-color: #000000;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.drawer--contents, .accordion--target {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+      display: none;
+ }
+}
+
+.drawer--contents, .accordion--target{
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        opacity: 1;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   [data-show-mobile="false"]{
       display: none !important
