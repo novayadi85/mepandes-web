@@ -56,7 +56,7 @@ jQuery(document).ready(function() {
       const menuId = jQuery(this).data("menu-id");
       activeMenuId = menuId;
       headerTitle = jQuery(this).text();
-      showContent(menuId);
+      showContent(menuId, false);
       setTitle();
   });
 
@@ -73,7 +73,7 @@ jQuery(document).ready(function() {
       if (menuId) e.preventDefault();
 
       activeMenuId = menuId;
-      showContent(menuId);
+      showContent(menuId, false);
       setTitle();
   });
 
@@ -142,7 +142,7 @@ jQuery(document).ready(function() {
         const lastMenuId = visitedMenus[visitedMenus.length - 1];
 
         if (lastMenuId) {
-          showContent(lastMenuId);
+          showContent(lastMenuId, true);
         } else {
           // If there are no more items in the array, reset the drawer content
             resetDrawerContent();
@@ -157,7 +157,7 @@ jQuery(document).ready(function() {
       jQuery('.data-drawer-title').text(headerTitle)
   }
 
-  function showContent(menuId) {
+  function showContent(menuId, back = false) {
       // if (activeMenuId === menuId) return;
 
       activeMenuId = menuId;
@@ -197,7 +197,9 @@ jQuery(document).ready(function() {
               headerTitle = selectedMenu.attr('data-title')
           }
 
-          console.log('title', selectedMenu.attr('data-title'))
+          if (visitedMenus.length > 0 && !back) {
+              animated = 'slide-right-to-left'
+          }
 
           jQuery(".drawer--contents").html(newContent).removeClass(animated).addClass(animated);
 
@@ -210,6 +212,7 @@ jQuery(document).ready(function() {
           jQuery(".drawer-back-button").show();
 
           setTitle();
+
           return;
 
       }
@@ -227,6 +230,11 @@ jQuery(document).ready(function() {
 
           if (selectedMenu.attr('data-title')) {
               headerTitle = selectedMenu.attr('data-title')
+          }
+
+
+          if (visitedMenus.length > 0) {
+              animated = 'slide-right-to-left'
           }
 
           newContent = jQuery("#" + menuId).html();
