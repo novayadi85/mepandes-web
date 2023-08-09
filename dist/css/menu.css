@@ -539,6 +539,10 @@ li.has-children>a:after {
 	display: none;
 }
 
+.drawer--contents li.menu-item:last-child {
+    border-bottom: none;
+}
+
 @media only screen and (max-width: 768px) {
   [data-show-mobile="false"]{
         display: none !important
