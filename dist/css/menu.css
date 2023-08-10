@@ -15,6 +15,7 @@
   overflow: hidden;
   max-width: 320px;
   */
+  font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -32,7 +33,7 @@
 .drawer--menu.open {
   left: 0;
   z-index: 1001;
-  width: 350px;
+  width: 320px;
 }
 
 .drawer--menu ul {
@@ -226,7 +227,7 @@ display: none;
 }
 
 .font-biger{
-font-size: 3rem;
+font-size: 2rem;
 }
 
 .bSKsZQ {
@@ -274,68 +275,71 @@ margin: 10px 0;
 }
 
 .kYCtdB {
-color: rgb(17, 17, 17);
-display: inline-block;
-width: 100%;
-margin-bottom: 0px;
-text-decoration: none;
+  color: rgb(17, 17, 17);
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 0px;
+  text-decoration: none;
 }
 
 [aria-expanded="false"]:after{
-display: inline-flex;
+  display: inline-flex;
   content: 'add';
   height: 20px;
   width: 24px;
   font-family: 'Material Symbols Outlined';
-font-weight: normal;
-font-style: normal;
-font-size: 24px;
-line-height: 1;
-letter-spacing: normal;
-text-transform: none;
-display: inline-block;
-white-space: nowrap;
-word-wrap: normal;
-direction: ltr;
--webkit-font-feature-settings: 'liga';
--webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  margin-right: 10px;
 }
 
 [aria-expanded="true"]:after{
-display: inline-flex;
-content: 'remove';
-height: 20px;
-width: 24px;
-font-family: 'Material Symbols Outlined';
-font-weight: normal;
-font-style: normal;
-font-size: 24px;
-line-height: 1;
-letter-spacing: normal;
-text-transform: none;
-display: inline-block;
-white-space: nowrap;
-word-wrap: normal;
-direction: ltr;
--webkit-font-feature-settings: 'liga';
--webkit-font-smoothing: antialiased;
+  display: inline-flex;
+  content: 'remove';
+  height: 20px;
+  width: 24px;
+  font-family: 'Material Symbols Outlined';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  margin-right: 10px;
 }
 
 .drawer--menu .has-children:after {
-content: "chevron_right";
-font-family: 'Material Symbols Outlined';
-font-weight: normal;
-font-style: normal;
-font-size: 24px;
-line-height: 1;
-letter-spacing: normal;
-text-transform: none;
-display: inline-block;
-white-space: nowrap;
-word-wrap: normal;
-direction: ltr;
--webkit-font-feature-settings: 'liga';
--webkit-font-smoothing: antialiased;
+  content: "chevron_right";
+  font-family: 'Material Symbols Outlined';
+  font-weight: 300;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  margin-right: 10px;
 }
 
 li.dvogyD > * {
@@ -358,9 +362,9 @@ button#openDrawerButton {
   padding: 7px 0 7px 10px;
   min-height: 50px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   color: #000;
-  font-weight: 700;
+  font-weight: 400;
   width: 100%;
 }
 
@@ -410,7 +414,7 @@ button#openDrawerButton {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #9999;
+  /* border-bottom: 1px solid #9999; */
 }
 
 h1.drawer-heading {
@@ -540,7 +544,7 @@ li.has-children>a:after {
 }
 
 .drawer--contents li.menu-item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -582,4 +586,21 @@ li.has-children>a:after {
     display: inherit;
   }
 
+  ul.menu--list {
+      padding: 0 10px;
+  }
+
+  .drawer--contents .menu--list .menu-holder.active {
+    padding: 60px 0px;
+  }
+
+  .menu--list li a{
+    min-height: inherit;
+  }
+
+  .drawer-header {
+      padding: 0;
+      border-bottom: 1px solid #1b1b1b;
+      height: 60px;
+  }
 }
