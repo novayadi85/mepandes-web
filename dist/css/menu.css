@@ -234,7 +234,7 @@ font-size: 2rem;
 display: flex;
 -webkit-box-align: center;
 align-items: center;
-padding: 0 10px !important;
+padding: 0 0 0 5px!important;
 }
 
 .bRUDhK {
