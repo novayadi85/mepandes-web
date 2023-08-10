@@ -578,6 +578,12 @@ li.has-children>a:after {
   z-index: 200000;
 }
 
+#secondary__menu > ul > li {
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
 #secondary__menu ul li > .menu--wrapper::before {
   content: "";
   height: 1px;
@@ -586,7 +592,7 @@ li.has-children>a:after {
   left: 0px;
   right: 0px;
   top: 0px;
-  background-color: rgb(204, 204, 204);
+  background-color: rgb(255 255 255);
 }
 
 #secondary__menu ul li > .menu--wrapper > .menu-holder {
@@ -754,4 +760,21 @@ li.has-children>a:after {
   }
 
   #secondary__menu { display: flex !important;}
+  #secondary__menu > ul > li:hover > a {
+    position: relative;
+  }
+  #secondary__menu > ul > li.has-children:hover > a::before {
+
+    position: absolute;
+    bottom: -16px;
+    content: "";
+    width: 0px;
+    height: 0px;
+    opacity: 100;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 8px solid rgb(255, 255, 255);
+    transition: opacity 0s ease 0s;
+  }
+
 }
