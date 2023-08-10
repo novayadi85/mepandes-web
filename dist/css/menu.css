@@ -426,38 +426,9 @@ h1.drawer-heading {
 }
 
 
-
-@media screen and (min-width: 600px) {
-  .drawer--menu ul{
-    height: calc( 100% - 1vh);
-    overflow-y: scroll;
-  }
-
-  .drawer--contents .menu--list .menu-holder.active {
-    height: 100%;
-    border-left: 1px solid #999;
-  }
-}
-
-
-@media screen and (max-width: 600px) {
-.drawer--menu.open {
-  max-width: calc( 100% - 10px);
-}
-
-.drawer--contents {
-  margin-right: 10px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-}
-
 .dvogyD {
   border-bottom: 1px solid #9999;
 }
-
-
 
 .drawer--contents, .accordion--target {
   overflow: overlay;
@@ -568,6 +539,34 @@ li.has-children>a:after {
     display: block;
   }
 
+  .drawer--menu.open {
+    max-width: calc( 100% - 10px);
+    width: 100%;
+  }
+
+  .drawer--contents {
+    margin-right: 10px;
+    padding-right: 0px;
+    padding-left: 15px;
+  }
+
+    .drawer--menu ul {
+      width: 100%;
+    }
+
+    [aria-expanded="true"]:after, [aria-expanded="false"]:after{
+      margin-right: 0;
+      margin-top: 3px;
+    }
+
+    .drawer--contents li.menu-item{
+      border-bottom: 1px solid #9999;
+    }
+
+    .menu--list li a{
+      height: 50px;
+    }
+
 }
 
 
@@ -602,5 +601,15 @@ li.has-children>a:after {
       padding: 0;
       border-bottom: 1px solid #1b1b1b;
       height: 60px;
+  }
+
+  .drawer--menu ul{
+    height: calc( 100% - 1vh);
+    overflow-y: scroll;
+  }
+
+  .drawer--contents .menu--list .menu-holder.active {
+    height: 100%;
+    border-left: 1px solid #999;
   }
 }
